@@ -11,6 +11,7 @@ init()
 
 from .utils.SHRWindowsDefenderManager_check_defender import check_defender
 from .utils.SHRWindowsDefenderManager_enable_defender import enable_defender
+from .utils.SHRWindowsDefenderManager_disable_defender import disable_defender
 
 print('\033[1mWelcome to use SHRWindowsDefenderManager - enable/disable Windows Defender\033[0m\n|  \033[1;34mGithub : https://github.com/JNTMTMTM/SHICTHRS_WindowsDefenderManager\033[0m')
 print('|  \033[1mAlgorithms = rule ; Questioning = approval\033[0m')
@@ -35,4 +36,12 @@ def SHRWindowsDefenderManager_enable_defender() -> None:
         if not SHRWindowsDefenderManager_check_defender():
             raise SHRWindowsDefenderManagerException(f"SHRWindowsDefenderManager [ERROR.4001.1] failed to enable Windows Defender.")
     except Exception as e: 
-        raise SHRWindowsDefenderManagerException(f"SHRWindowsDefenderManager [ERROR.4001] unable to enable Windows Defender. | {str(e)}")
+        raise SHRWindowsDefenderManagerException(f"SHRWindowsDefenderManager [ERROR.4001.2] unable to enable Windows Defender. | {str(e)}")
+
+def SHRWindowsDefenderManager_disable_defender() -> None:
+    try:
+        disable_defender(SHRWindowsDefenderManagerException)
+        if SHRWindowsDefenderManager_check_defender():
+            raise SHRWindowsDefenderManagerException(f"SHRWindowsDefenderManager [ERROR.4002.1] failed to disable Windows Defender.")
+    except Exception as e: 
+        raise SHRWindowsDefenderManagerException(f"SHRWindowsDefenderManager [ERROR.4002.2] unable to disable Windows Defender. | {str(e)}")
