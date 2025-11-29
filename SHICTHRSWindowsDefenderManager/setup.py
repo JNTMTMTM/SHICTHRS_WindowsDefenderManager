@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='SHICTHRSWindowsDefenderManager',
-      version='1.0.0',
+      version='1.1.0',
       description='SHICTHRS Windows Defender Manager enable/disable Windows Defender',
       url='https://github.com/JNTMTMTM/SHICTHRS_WindowsDefenderManager',
       author='SHICTHRS',
